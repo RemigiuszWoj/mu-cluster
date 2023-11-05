@@ -1,0 +1,4 @@
+# apiVersions: apps/v1
+# kind: Deployment
+# metadata:
+#   name: gnet-app
