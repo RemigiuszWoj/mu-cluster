@@ -1,19 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: pnet-app
+  name: net-app
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: pnet-app
+      app: net-app
   template:
     metadata:
       labels:
-        app: pnet-app
+        app: net-app
     spec:
       containers:
         - name: pnet-app
           image: narwaqazwsx/pnet-app
           ports:
             - containerPort: 8889
+        - name: gnet-app
+          image: narwaqazwsx/gnet-app
+          ports:
+            - containerPort: 8888
