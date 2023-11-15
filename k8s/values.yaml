@@ -1,0 +1,15 @@
+environment: development
+name: net-app 
+replicas: 3
+pnet:
+  container:
+    name: pnet-app
+    port: 8889
+    image: narwaqazwsx/pnet-app
+    tag: latest
+gnet:
+  container:
+    name: gnet-app
+    port: 8888
+    image: narwaqazwsx/gnet-app
+    tag: latest

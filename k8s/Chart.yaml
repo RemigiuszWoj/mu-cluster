@@ -1,0 +1,12 @@
+version: 1.0.1
+apiVersion: v2
+description: "Helm Chart for Net Apps"
+name: net-app
+keywords:
+  - net
+  - app
+home: "https://github.com/RemigiuszWoj/my-cluster.git"
+sources:
+  - "https://github.com/RemigiuszWoj/my-cluster.git"
+maintainers:
+  - name: "RemigiuszWoj"

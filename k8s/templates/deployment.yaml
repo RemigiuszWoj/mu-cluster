@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{.Values.name}}
+spec:
+  replicas: {{.Values.replicas}}
+  selector:
+    matchLabels:
+      app: {{.Values.name}}
+  template:
+    metadata:
+      labels:
+        app: {{.Values.name}}
+    spec:
+      containers:
+        - name: {{ .Values.pnet.container.name }}
+          image: {{ .Values.pnet.container.image }}
+          ports:
+            - containerPort: {{ .Values.pnet.container.port }}
+        - name: {{ .Values.gnet.container.name }}
+          image: {{ .Values.gnet.container.image }}
+          ports:
+            - containerPort: {{ .Values.gnet.container.port }}
