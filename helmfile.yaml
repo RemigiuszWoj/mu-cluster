@@ -1,0 +1,21 @@
+repositories:
+  - name: prometheus-community
+    url: https://prometheus-community.github.io/helm-charts
+releases:
+  - name: net-app
+    namespace: default
+    chart: ./k8s
+    version: 1.0.0
+    values:
+      - ./k8s/values.yaml
+
+  - name: kube-state-metrics
+    namespace: kube-state-metrics
+    chart: prometheus-community/kube-state-metrics
+
+  - name: prometheus
+    namespace: prometheus
+    chart: prometheus-community/prometheus
+    set:
+      - name: rbac.create
+        value: true

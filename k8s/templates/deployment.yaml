@@ -21,3 +21,9 @@ spec:
           image: {{ .Values.gnet.container.image }}
           ports:
             - containerPort: {{ .Values.gnet.container.port }}
+          env:
+          - name: GREETING
+            valueFrom:
+              configMapKeyRef:
+                name: gnet-config
+                key: greeting
